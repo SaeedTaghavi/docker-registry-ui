@@ -1,0 +1,12 @@
+version: "3"
+services:
+  jupyter-notebook:
+    build: .
+    volumes:
+      - .:/opt/data
+    environment:
+      PASSWORD: "pass"
+      JUPYTER_TOKEN: "easy"
+      LOCAL_USER_ID: "`id -u $USER`"
+    ports:
+      - "8000:8888"
